@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import {BrowserRouter,Routes,Route, Link} from 'react-router-dom';
 import './App.css';
+import CreateTask from './components/CreateTask';
+import ListTask from './components/ListTask';
+import EditTask from './components/EditTask';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+			<h2>
+			Dobrodošli na aplikaciju za planiranje, 
+      </h2>
+      <BrowserRouter>
+      <ul>
+      <li><Link to="/">List task</Link></li>
+      <li><Link to="task/create">Create task</Link></li>
+      </ul>
+      <Routes>
+      <Route index element={<ListTask />}/>
+
+        <Route path="task/create" element={<CreateTask />}/>
+        <Route path="task/:id/edit" element={<EditTask />}/>
+      </Routes>
+      </BrowserRouter>
+
     </div>
   );
 }
