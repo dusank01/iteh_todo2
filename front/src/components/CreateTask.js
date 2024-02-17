@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import './Style.css';
+
 
 export default function CreateTask(){
     const navigate=useNavigate();
@@ -22,16 +24,16 @@ export default function CreateTask(){
     
 
     return(
-        <div>
+        <div className="forma">
             <h1>Create Task</h1>
             <form onSubmit={handleSumbit}>
-                <label>Korisnik:</label>
+                <label className="label">Korisnik: </label>
                 <input type="text" name="korisnik" onChange={handleChange}/>
                 <br/>
-                <label>Naziv:</label>
+                <label className="label">Naziv: </label>
                 <input type="text" name="naziv"onChange={handleChange}/>
                 <br/>
-                <label>Opis:</label>
+                <label className="label">Opis: </label>
                 <textarea
                     rows = {4}    // Specifies the number of visible text lines
                     cols = {30}    // Specifies the width of the textarea in characters
@@ -42,7 +44,7 @@ export default function CreateTask(){
                     onChange={handleChange}
 />                
             <br/>
-            <label>Rok:</label>
+            <label className="label">Rok: </label>
             <input type="date" name="rok"onChange={handleChange}/>
                 <br/>
             <br/>

@@ -4,18 +4,21 @@ import CreateTask from './components/CreateTask';
 import ListTask from './components/ListTask';
 import EditTask from './components/EditTask';
 
+
 function App() {
   return (
     <div className="App">
       
-			<h2>
-			Dobrodošli na aplikaciju za planiranje, 
+			<h2 id='h2'>
+			Dobrodošli na aplikaciju za planiranje! 
       </h2>
       <BrowserRouter>
-      <ul>
+      <div className="lista">
+      <ul className="lista">
       <li><Link to="/">List task</Link></li>
       <li><Link to="task/create">Create task</Link></li>
       </ul>
+      </div>
       <Routes>
       <Route index element={<ListTask />}/>
 

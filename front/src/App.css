@@ -1,0 +1,86 @@
+.App {
+  margin:0;
+  background-image: url('../liquid-marbling-paint-texture-background-fluid-painting-abstract-texture-intensive-color-mix-wallpaper_1258-82940.avif');
+  text-align: center;
+  padding: 1rem;
+
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+ 
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App-header{
+  background-color: antiquewhite;
+}
+
+#h2{
+  border-radius: 10%;
+  padding: 3rem;
+  color: #79098f;
+  background-color: antiquewhite;
+}
+
+.lista{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  list-style-type: none;
+  padding: 1rem;
+  border-radius: 1%;
+  gap:3rem;
+  
+}
+.lista li{
+  flex-grow: 1;
+  padding: 1rem;
+  border: 1px solid  #79098f ;
+  background-color: antiquewhite;
+  border-radius: 10%;
+  
+
+}
+
+.lista li a {
+  text-wrap: nowrap;
+  text-decoration: none; 
+  align-content: stretch;
+  color: #79098f; 
+  align-self: flex-start;
+  font-size: 2rem;
+ 
+}
+
+
+
