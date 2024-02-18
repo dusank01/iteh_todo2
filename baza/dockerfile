@@ -1,0 +1,2 @@
+FROM mysql:latest
+COPY todo2.sql /docker-entrypoint-initdb.d/

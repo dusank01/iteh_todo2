@@ -1,0 +1,22 @@
+version: '3'
+services:
+  frontend:
+    build: ./front
+    ports:
+      - "3001:3000"
+    
+
+  backend:
+    build: ./api
+    ports:
+      - "80:80"
+
+  database:
+    build: ./baza
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
