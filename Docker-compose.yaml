@@ -3,8 +3,7 @@ services:
   frontend:
     build: ./front
     ports:
-      - "3001:3000"
-    
+      - "3000:3000"
 
   backend:
     build: ./api
@@ -20,3 +19,6 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
+volumes:
+  db_data:
+    driver: local
