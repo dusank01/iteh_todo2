@@ -8,7 +8,6 @@ import { Button } from "react-bootstrap";
 export  default function ListTask(){
     const navigate=useNavigate();
     const[inputs, setInputs]=useState([]);
-
     const {id}=useParams();
 
 useEffect(()=>{

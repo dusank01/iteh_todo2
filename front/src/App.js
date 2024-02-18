@@ -20,8 +20,7 @@ function App() {
       </ul>
       </div>
       <Routes>
-      <Route index element={<ListTask />}/>
-
+        <Route index element={<ListTask />}/>
         <Route path="task/create" element={<CreateTask />}/>
         <Route path="task/:id/edit" element={<EditTask />}/>
       </Routes>
