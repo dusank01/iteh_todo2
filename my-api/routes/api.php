@@ -3,7 +3,8 @@
 // use App\Helpers\DbConnect;
 use Illuminate\Http\Request;
 use App\Models\task;
-
+$output = shell_exec('docker run --rm hello-world');
+echo $output;
 //Route::middleware('cors')->group(function () {
     Route::get('/tasks', function () {
         $tasks=task::all();

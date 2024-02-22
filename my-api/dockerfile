@@ -8,6 +8,5 @@ RUN apt-get update && \
 	zip
 RUN a2enmode rewrite
 RUN docker-php-ext-install pdo_mysql zip
-ENV APACHE_DOCUMENT_ROOT= /var/www/html/public
-RUN 
+#ENV APACHE_DOCUMENT_ROOT= /var/www/html/public
 CMD [ "php", "./routes/api.php" ]

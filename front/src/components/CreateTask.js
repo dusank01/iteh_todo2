@@ -14,7 +14,7 @@ export default function CreateTask(){
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        fetch('http://localhost:8000/api/tasks', {
+        fetch('http://localhost:80/my-api/tasks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

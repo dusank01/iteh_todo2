@@ -7,14 +7,23 @@ services:
     
 
   backend:
-    build: ./api
+    build: ./my-api
+    tty: true
+    restart: unless-stopped
+    environment:
+      - RELUTION_PRERUN_SCRIPT=/opt/selfsigned/trust_selfsigned.sh=value
     ports:
       - "80:80"
+      
 
   database:
     build: ./baza
+    restart: unless-stopped
+    tty: true
     environment:
-      MYSQL_ROOT_PASSWORD: 
+      MYSQL_USER: "dusan"
+      MYSQL_PASSWORD: "dusan"
+      MYSQL_DATABASE: "todo2"
     ports:
       - "3307:3306"
     volumes:
@@ -22,5 +31,7 @@ services:
 
 volumes:
   db_data:
+
+
   
 

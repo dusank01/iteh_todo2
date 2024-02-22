@@ -13,7 +13,7 @@ export default function ListTask(){
     }, []);
 
     function getTask(){
-        fetch('http://localhost:8000/api/tasks/'+id)
+        fetch('http://localhost:80/my-api/tasks/'+id)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -31,7 +31,7 @@ export default function ListTask(){
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        fetch('http://localhost:8000/api/tasks/'+id, {
+        fetch('http://localhost:80/my-api/tasks/'+id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

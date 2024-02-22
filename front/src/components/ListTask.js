@@ -11,7 +11,7 @@ export default function ListTask() {
     }, []);
 
     function getTasks() {
-        fetch('http://localhost:8000/api/tasks')
+        fetch('http://localhost:80/my-api/tasks')
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -21,7 +21,7 @@ export default function ListTask() {
     }
 
     const deleteTask = (id) => {
-        fetch('http://localhost:8000/api/tasks/'+ id, {
+        fetch('http://localhost:80/my-api/tasks/'+ id, {
             method: 'DELETE',
         })
         .then(response => response.json())
