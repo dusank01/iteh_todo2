@@ -1,26 +1,38 @@
-version: '3'
-services:
-  frontend:
-    build: ./front
-    ports:
-      - "3001:3000"
-    
+version: '3.8'
 
+services:
   backend:
-    build: ./api
+    build:
+      context: ./my-api
+      dockerfile: dockerfile
+    environment:
+      DB_HOST: database
+      DB_DATABASE: todo2
+      DB_USERNAME: root
+      DB_PASSWORD: dusan
+    depends_on:
+      - database
     ports:
-      - "80:80"
+      - "8000:80"
 
   database:
-    build: ./baza
+    image: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: todo2
+      MYSQL_ROOT_PASSWORD: dusan
     ports:
       - "3307:3306"
-    volumes:
-      - db_data:/var/lib/mysql
 
+  
+
+  frontend:
+    build:
+      context: ./front
+      dockerfile: dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
 volumes:
   db_data:
-  
 

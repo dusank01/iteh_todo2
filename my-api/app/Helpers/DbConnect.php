@@ -3,7 +3,7 @@ class DbConnect {
     private $server = 'localhost';
     private $dbname = 'todo2';
     private $user = 'root';
-    private $pass = '';
+    private $pass = 'dusan';
 
     public function connect() {
         try {
